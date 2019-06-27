@@ -1,0 +1,56 @@
+// Greys ----------------------------------------------------------------------
+
+$white: #fff;
+$black: #000;
+$red: #b71a1f;
+$blue: #13284c;
+$gray: #696969;
+
+$ease: all 0.3s ease;
+
+$base-bg-color: #fff;
+$base-font-color: #000;
+$selection-background: #ccc;
+$placeholder-color: $gray !default;
+$border-color: #ccc;
+
+// Reporting ------------------------------------------------------------------
+//
+// Using in the Reporting module (module/_reporting.scss)
+
+$reporting-text: #333;
+
+$reporting-success: #a2d69a;
+$reporting-success-light: #def1dd;
+$reporting-error: #f39b88;
+$reporting-error-light: #fadcd7;
+$reporting-warning: #f7e287;
+$reporting-warning-light: #fcf5d6;
+$reporting-info: #90b1d2;
+$reporting-info-light: #dae5f0;
+
+// Font-stack -----------------------------------------------------------------
+//
+
+$font-stack: 'Myriad Pro', Helvetica Neue, Helvetica, Verdana, Roboto, sans-serif;
+$font-myriad: 'Myriad Pro', Helvetica Neue, Helvetica, Verdana, Roboto, sans-serif;
+$font-bold: 'Myriad Pro', Helvetica Neue, Helvetica, Verdana, Roboto, sans-serif;
+
+$letter-space: normal;
+$font-smoothing: subpixel-antialiased !default;
+
+
+// Webkit tap highlight color for mobile
+$webkit-tap-highlight-color: rgba(0, 0, 0, .13);
+
+/*
+ *  Links color
+ */
+$link-color: $red;
+$link-color-hover: darken($link-color, 10);
+$link-color-visited: $link-color-hover;
+$link-color-focus: darken($link-color-hover, 10);
+$link-hover-effect: .1s;
+
+
+

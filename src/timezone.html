@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+@@include('common/head.html')
+
+<body>
+  <header class="loading-screen">
+    <!-- Thường chứa LOGO, MENU NAVIGATION,... -->
+    @@include('common/menu.html')
+  </header>
+
+  <!-- Your HTML here -->
+  <main id="pTime" class="loading-screen">
+    <div class="wrapper">
+      <ul class="item-wrap">
+        <li class="zone">
+          <div>Local Date</div>
+          <div id="local_date">****** **, 20**</div>
+        </li>
+        <li class="zone">
+          <div>Local Time</div>
+          <div id="local_time">**:**:**</div>
+        </li>
+        <li class="zone">
+          <div>UTC Time</div>
+          <div id="utc_time">**:**:**</div>
+        </li>
+        <li class="zone">
+          <div>Zae fam's Time</div>
+          <div id="german_time">**:**</div>
+        </li>
+        <li class="zone">
+          <div>Ti's Time</div>
+          <div id="vietnam_time">**:**</div>
+        </li>
+        <li class="zone">
+          <div>Tsuki's Time</div>
+          <div id="tsuki_time">**:**</div>
+        </li>
+        <li class="zone">
+          <div>Fuyu's Time</div>
+          <div id="fuyu_time">**:**</div>
+        </li>
+        <li class="zone">
+          <div>Poy's Time</div>
+          <div id="poy_time">**:**</div>
+        </li>
+        <li class="zone">
+          <div>Mikko's Time</div>
+          <div id="mikko_time">**:**</div>
+        </li>
+        <!-- <li class="zone">
+          <div>Kaoz's Time</div>
+          <div id="kaoz_time">**:**</div>
+        </li> -->
+      </ul>
+
+      <div class="ovl"></div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Chứa footer -->
+    <!-- @@include('common/footer.html') -->
+  </footer>
+
+  <!-- Chứa các POPUP của website, phân biệt với nhau bằng class -->
+  <!-- POPUP này được control (show/hide) bởi "main.js" -->
+  <!-- 
+    // Mở popup có class "register": 
+    POPUP.show("register"); 
+    // hoặc:
+    POPUP.show("register", callback);
+    
+    Tắt tất cả popup: 
+    POPUP.hide();
+  -->
+  <div id="popup" class="helper-hide">
+    <div class="holder helper-centerbox register">ABC</div>
+    <div class="holder helper-centerbox login">DEF</div>
+  </div>
+
+  <!-- Default PRELOADER with rotating circle -->
+  <!-- Được control bởi: main.js -->
+  <!-- PRELOADER.show() -->
+  <!-- PRELOADER.hide() -->
+  <div id="preloader" class="helper-hide">
+    <div class="loader helper-centerbox">
+      <div class="loader-holder">
+        <div class="loader-on"><img src="./images/loader-without-shadow.png" alt=""></div>
+        <div class="loader-off"><img src="./images/loader-with-shadow.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 default Javascript files -->
+  <script src="js/main.js"></script> <!-- của FrontEnd -->
+  <script src="js/function.js"></script> <!-- của BackEnd -->
+
+</body>
+</html>

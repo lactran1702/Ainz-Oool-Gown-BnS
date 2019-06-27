@@ -1,0 +1,46 @@
+.btn {
+  background: $red;
+  line-height: 50px;
+  width: auto;
+  display: inline-block;
+  padding: 0 30px;
+  color: $white;
+  text-transform: uppercase;
+  border-radius: 7px;
+  min-width: 250px;
+  text-align: center;
+  font-weight: 600;
+
+  &:hover {
+    background: $blue;
+  }
+
+  &:after {
+    content: '';
+    width: 20px;
+    height: 20px ;
+    background: url(../images/ar.png) no-repeat center;
+    background-size: 15px; 
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -10px;
+  }
+}
+.btn-close {
+  width: 35px;
+  height: 35px;
+  background: url(../images/btn-close.png) no-repeat center;
+  background-size: cover; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 99;
+  display: block;
+  transition: all .5s;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,52 @@
+#pTime {
+  padding-top: 100px;
+
+  .wrapper {
+    background: url(../images/time-zone.jpg) no-repeat center;
+    background-size: cover;
+    min-height: calc(100vh - 100px);
+    height: auto;
+    position:relative;
+  }
+
+  .item-wrap {
+    // @include absoluteCenter;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+    z-index: 2;
+
+    .zone {
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(100% / 3 - 3px);
+      text-align: center;
+      margin: 30px auto;
+      
+      > div {
+        font-size: 30px;
+        color: $white;
+      }
+    }
+  }
+
+  .ovl {
+    @include ovl;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0.4;
+    // display: none;
+  }
+
+  .name-box {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+  }
+
+
+}

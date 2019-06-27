@@ -1,0 +1,52 @@
+{
+  "name": "digifast",
+  "version": "0.9.18",
+  "description": "a front-end automation framework by digitop",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-index": "0.0.8",
+    "gulp-tinify": "^1.0.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "beepbeep": "^1.2.2",
+    "browser-sync": "^2.24.6",
+    "chalk": "^2.4.1",
+    "chokidar": "^2.0.4",
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "fs-extra": "^4.0.1",
+    "gaze": "^1.1.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^1.2.0",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-image": "^4.3.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-size": "^2.1.0",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-terser": "^1.1.5",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifyes": "^0.2.1",
+    "gulp-util": "^3.0.8",
+    "gulp-wait": "0.0.2",
+    "minimatch": "^3.0.4",
+    "node-notifier": "^5.2.1",
+    "shuffle-array": "^1.0.1",
+    "tinify": "^1.5.0"
+  }
+}

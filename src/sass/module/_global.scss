@@ -1,0 +1,382 @@
+// ALL MIXIN ARRANGED FROM POPULAR TO BARELY USE
+
+// FIX IMAGE TO A BOX
+@mixin imgFit ($object-fit: cover, $width: 100%, $height: 100%) {
+  object-fit: $object-fit;
+  width: $width;
+  height: $height;
+}
+
+@mixin inline-block ($vertical-align: middle) {
+  display: inline-block;
+  vertical-align: $vertical-align;
+}
+
+// CTA
+@mixin cta () {
+  font-size: 14px;
+  color: #fff;
+  background-color: #337ab7;
+  border-radius: 3px;
+  border: 1px solid #2e6da4;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #286090;
+    border-color: #204d74;
+  }
+
+  &:active {
+    background-color: #204d74;
+    border-color: #122b40;
+  }
+}
+
+// Center object have Width or Height or have both
+@mixin marginCenter($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+  }
+
+  @else if ($horizontal) {
+    left: 50%;
+  }
+
+  @else if ($vertical) {
+    top: 50%;
+  }
+}
+
+// Center object without Width & Height
+@mixin absoluteCenter($horizontal: true, $vertical: true) {
+
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50% ,0);
+
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate3d(-50%, 0 ,0);
+
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate3d(0, -50% ,0);
+  }
+
+}
+
+// To cover an object
+@mixin ovl ($width: 100%) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $width;
+  height: 100%;
+  z-index: 1001;
+}
+
+// Clear translate3d
+@mixin clearpos {
+  position: static;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  transform: translate3d(0, 0 ,0);
+}
+
+// Pseudo for ::before & ::after
+@mixin pseudo ($display: block, $content: '') {
+  content: $content;
+  display: $display;
+}
+
+// Pagination
+@mixin pagination ($font-size: 16px) {
+  text-decoration: none;
+  margin: 0 0 0 -4px; //plus border value if have
+  font-size: $font-size;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #999;
+  transition: $ease;
+
+  &.active,
+  &:hover {
+    color: #fff;
+    background-color: #999;
+    transition: $ease;
+  }
+}
+
+// PAGINATION DOTS OR BULLETS
+@mixin pagingBtn ($value: 40px) {
+  width: $value;
+  height: $value;
+  background: url(../images/) no-repeat center;
+  background-size: cover;
+}
+
+// Placeholders
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// Caret or Triangle small button
+@mixin caret ($top: true, $bottom: true) {
+  // @include inline-block();
+  width: 0;
+  height: 0;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+
+  @if ($top) {
+    border-top: 4px dashed;
+  } 
+
+  @else if ($bottom) {
+    border-bottom: 4px dashed;
+  }
+}
+
+// Badges -number of notification
+@mixin badge () {
+  color: #337ab7;
+  background-color: #fff;
+  font-size: 9px;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  transition: $ease;
+}
+
+// Label
+@mixin label-default () {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+// CUSTOM SCROLLBAR
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  // body {
+    // scrollbar-face-color: $foreground-color;
+    // scrollbar-track-color: $background-color;
+  // }
+}
+
+// TEXT SHADOW
+@mixin text-shadow ($string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+  text-shadow: $string;
+}
+
+// DROP SHADOW
+@mixin box-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}
+
+@mixin animation ($name, $duration: 300ms, $delay: 0, $ease: ease) {
+  // -webkit-animation: $name $duration $delay $ease;
+  // -moz-animation: $name $duration $delay $ease;
+  // -ms-animation: $name $duration $delay $ease;
+  animation: $name $duration $delay $ease;
+}
+
+
+
+// TIPS
+// instead of
+// &:last-child {border-right: transparent}
+// use
+// &:not(:last-child) {border-right: 1px}
+
+
+
+
+// NOT UNDERSTAND YET
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+@mixin clearfix($extend: true) {
+  @if $extend {
+    @extend %clearfix;
+  } @else {
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+%clearfix {
+  @include clearfix($extend: false);
+}
+
+
+
+////////////    TESTING OUT PUTTIN MIXIN INTO CLASS OR ID    ///////////////
+
+.dgt_cl {
+  clear: both;
+  overflow: hidden;
+}
+
+/*
+  Tiny Scrollbar
+ */
+.scrolled { width: 100%; }
+.scrolled .g-viewport { height: 100%; overflow: hidden; position: relative; }
+.scrolled .g-overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; width: 100%; }
+.scrolled .g-thumb .end,
+.scrolled .g-thumb { background:#b71a1f; }
+.scrolled .g-scrollbar { position: relative; float: right; width: 10px;  }
+.scrolled .g-track { height: 100%; width: 10px; position: relative; background: #e8e8e8;}
+.scrolled .g-thumb { height: 20px; width: 10px; cursor: pointer; overflow: hidden; position: absolute; top: 0;}
+.scrolled .g-thumb .end { overflow: hidden; height: 5px; width: 10px; }
+.scrolled .g-disable{ display: none; }
+.g-noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+.checkbox,
+.radio {
+  width: 25px;
+  height: 25px;
+  background: url(../images/checkbox.png) no-repeat;
+  display: inline-block;
+
+}
+
+.radio {
+  background: url(../images/radio.png) no-repeat;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+
+  background: #f4f4f4;
+  line-height: 1;
+  font-size: 15px;
+  color: #000;
+  width: 100%;
+  padding: 5px 20px 0 20px;
+  border: none;
+  height: 32px;
+
+  // &:focus::-webkit-input-placeholder {
+  //   opacity: 0;
+  // }
+
+}
+
+input[type="text"]::selection,
+input[type="password"]::selection,
+textarea::selection {
+  background: #ededed;
+  text-shadow: none;
+}
+
+select {
+  appearance: none;
+  border: 0;
+  background: none;
+}
+
+
+
+// ANIMATION KEYFRAMES
+@keyframes reveal-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+@keyframes revealer-text {
+  
+  0%, 50% {
+    transform-origin: 0 50%;
+  }
+  
+  60%, 100% {
+    transform-origin: 100% 50%;   
+  }
+
+  
+  60% {
+    transform: scaleX(1);
+  }
+  
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0
+  }
+
+  50% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes grin {
+  0% {
+    bottom: 10px
+  }
+
+  50% {
+    bottom: 20px
+  }
+
+  100% {
+    bottom: 10px
+  }
+}
+
+
