@@ -1,0 +1,1 @@
+var POPUP={isShow:!1,currentPopup:"",init:function(){},show:function(e){$("#popup").removeClass("helper-hide"),TweenMax.set("#popup .holder",{scaleX:.5,scaleY:.5,opacity:0})},hide:function(e){$("#popup").addClass("helper-hide")}};
